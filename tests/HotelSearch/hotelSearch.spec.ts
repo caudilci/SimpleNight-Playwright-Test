@@ -8,8 +8,8 @@ testData.forEach(data => {
   test(`HotelSearch ${data.testInfoSlug}`, async ({ page }) => {
     const baseURL = data.baseURL
     const home = new PlaywrightHomePage(page, baseURL);
-    const homeHotels = new PlaywrightHomeHotelsPage(page, baseURL);
-    const searchHotels = new PlaywrightSearchHotelsPage(page, baseURL);
+    const homeHotels = new PlaywrightHomeHotelsPage(page);
+    const searchHotels = new PlaywrightSearchHotelsPage(page);
   
     await home.goto();
     await home.selectHotelsCategory();

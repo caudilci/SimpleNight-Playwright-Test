@@ -9,10 +9,16 @@ export class PlaywrightHomePage {
         this.baseURL = baseURL;
     }
 
+    /**
+     * Goes to base URL
+     */
     async goto(): Promise<void> {
         await this.page.goto(this.baseURL);
     }
 
+    /**
+     * Clicks Hotels category
+     */
     async selectHotelsCategory(): Promise<void> {
         await this.page.getByRole('link', { name: 'Hotels'}).click();
     }
