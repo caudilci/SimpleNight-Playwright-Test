@@ -21,7 +21,7 @@ testData.forEach(data => {
     await homeHotels.search();
   
     await searchHotels.selectMapView();
-    await page.waitForTimeout(5000);
+    await page.waitForTimeout(5000); // Sometimes map pins and prices take a few seconds to load. Ideally this would be removed in the future
     await searchHotels.resetPriceRangeFilter();
     await searchHotels.setMinPrice(data.price.min);
     await searchHotels.setMaxPrice(data.price.max);
