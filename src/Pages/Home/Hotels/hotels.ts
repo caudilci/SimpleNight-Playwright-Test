@@ -9,12 +9,12 @@ export class PlaywrightHomeHotelsPage {
         this.baseURL = baseURL;
     }
 
-    async populateLocationField(input: string): Promise<void> {
+    async populateDestinationField(input: string): Promise<void> {
         await this.page.getByRole('button', { name: 'Destination' }).click();
         await this.page.getByPlaceholder('Where are you going?').fill(input);
     }
 
-    async selectLocation(input: string): Promise<void> {
+    async selectDestination(input: string): Promise<void> {
         await this.page.getByRole('button', { name: input }).click();
     }
 

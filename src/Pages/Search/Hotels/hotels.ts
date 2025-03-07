@@ -27,7 +27,7 @@ export class PlaywrightSearchHotelsPage {
         let currentValue = await slider.getAttribute('aria-valuenow')
         let minValue = await slider.getAttribute('aria-valuemin')
         if (slider) {
-            let boundingBox = await slider.boundingBox();
+            const boundingBox = await slider.boundingBox();
             if (boundingBox) {
                 if (Number(currentValue) < value) {
                     while (Number(currentValue) < value) {
@@ -61,7 +61,7 @@ export class PlaywrightSearchHotelsPage {
         let currentValue = await slider.getAttribute('aria-valuenow')
         let maxValue = await slider.getAttribute('aria-valuemax')
         if (slider) {
-            let boundingBox = await slider.boundingBox();
+            const boundingBox = await slider.boundingBox();
             if (boundingBox) {
                 if (Number(currentValue) < value) {
                     while (Number(currentValue) > value) {
