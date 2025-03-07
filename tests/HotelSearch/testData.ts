@@ -15,10 +15,12 @@ type HotelSearchTest = {
     mapNavigationType: 'pin' | 'map'
 }
 
+const environment = process.env.TEST_ENVIRONMENT ?? 'app';
+
 export const testData: [HotelSearchTest] = [
     {
         testInfoSlug: 'prod-miami-may-good-hyde-suites',
-        baseURL: 'https://app.simplenight.com/',
+        baseURL: `https://${environment}.simplenight.com/`,
         destinationSearchValue: 'Miami',
         destinationValue: 'Miami Miami, FL, USA',
         fromDate: { day: 20, month: 5, year: 2025 },
